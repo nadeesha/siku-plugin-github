@@ -1,6 +1,6 @@
 {
   "name": "siku-plugin-github",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "github plugin for siku.io",
   "main": "lib/index.js",
   "scripts": {
