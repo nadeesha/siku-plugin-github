@@ -4,7 +4,7 @@
   "description": "github plugin for siku.io",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "echo 'no tests yo!'"
   },
   "repository": {
     "type": "git",
