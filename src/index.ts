@@ -1,9 +1,4 @@
-import {
-  PluginGenerator,
-  IUtils,
-  IPluginConfig,
-  IEvent
-} from 'siku-plugin-sdk';
+import { PluginGenerator, IUtils, IPluginConfig, IEvent } from 'siku-plugin-sdk';
 
 interface IUserConfig {
   username: string;
@@ -30,26 +25,24 @@ export interface IGithubAccessTokenParams {
 
 const trackedGithubEvents = ['PublicEvent', 'PullRequestEvent', 'PushEvent'];
 
-const main: PluginGenerator<IUserConfig> = (
-  utils: IUtils,
-  pluginConfig: IPluginConfig,
-  userConfig: IUserConfig
-) => {
+const main: PluginGenerator<IUserConfig> = (utils: IUtils, pluginConfig: IPluginConfig, userConfig: IUserConfig) => {
   async function getAuthorizationUrl(): Promise<string> {
-    return `https://github.com/login/oauth/authorize?client_id=${pluginConfig.clientId}&scope=user&redirect_uri=${pluginConfig.redirectUrl}`;
+    return `https://github.com/login/oauth/authorize?client_id=${pluginConfig.clientId}&scope=user&redirect_uri=${
+      pluginConfig.redirectUrl
+    }`;
   }
 
-  async function getAccessToken(
-    authParams: IGithubAuthorizationResponse
-  ): Promise<string> {
-    const response = await utils.post<
-      IGithubAuthorizationResponse
-    >(`https://github.com/login/oauth/access_token`, null, {
-      client_id: pluginConfig.clientId,
-      client_secret: pluginConfig.clientSecret,
-      code: authParams.code,
-      redirect_url: pluginConfig.redirectUrl
-    });
+  async function getAccessToken(authParams: IGithubAuthorizationResponse): Promise<string> {
+    const response = await utils.post<IGithubAuthorizationResponse>(
+      `https://github.com/login/oauth/access_token`,
+      null,
+      {
+        client_id: pluginConfig.clientId,
+        client_secret: pluginConfig.clientSecret,
+        code: authParams.code,
+        redirect_url: pluginConfig.redirectUrl
+      }
+    );
 
     return response.code;
   }
@@ -78,10 +71,7 @@ const main: PluginGenerator<IUserConfig> = (
       distinct_size: string;
     }
 
-    const events = await utils.get<IGithubEvent[]>(
-      `https://api.github.com/users/${userConfig.username}/events`,
-      {}
-    );
+    const events = await utils.get<IGithubEvent[]>(`https://api.github.com/users/${userConfig.username}/events`, {});
 
     return utils
       ._(events)

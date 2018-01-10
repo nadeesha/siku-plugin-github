@@ -5,10 +5,11 @@
     "declaration": false,
     "noImplicitAny": true,
     "removeComments": true,
-    "outDir": "compiled",
+    "outDir": "lib",
+    "sourceRoot": "./src",
     "jsx": "react",
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": false,
     "experimentalDecorators": true
   },
   "compileOnSave": true,

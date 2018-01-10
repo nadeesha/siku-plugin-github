@@ -4,7 +4,8 @@
   "description": "github plugin for siku.io",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo 'no tests yo!'"
+    "test": "echo 'no tests yo!'",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   },
   "homepage": "https://github.com/thisdayio/thisday-github#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.92",
     "lodash": "^4.16.4",
     "siku-plugin-sdk": "^0.1.1",
-    "superagent": "^2.3.0"
+    "superagent": "^2.3.0",
+    "typescript": "^2.6.2"
   }
 }
