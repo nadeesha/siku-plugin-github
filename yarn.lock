@@ -116,9 +116,9 @@ safe-buffer@~5.1.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-siku-plugin-sdk@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/siku-plugin-sdk/-/siku-plugin-sdk-0.3.0.tgz#f60aab43058167df082d220ebbb6811d9c7f768c"
+siku-plugin-sdk@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/siku-plugin-sdk/-/siku-plugin-sdk-0.4.0.tgz#daa3f336dfcbb77c437dd44996da2f57dd942975"
   dependencies:
     lodash "^4.17.4"
     moment "^2.18.1"
